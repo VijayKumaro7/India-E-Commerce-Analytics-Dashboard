@@ -39,9 +39,25 @@ india-dashboard/
 ├── data/
 │   ├── india_ecommerce_orders.csv  # cleaned, feature-engineered dataset
 │   └── india_states.geojson        # simplified India state boundaries
+├── tests/
+│   └── test_data.py                # data smoke tests (run with `pytest`)
+├── .github/workflows/ci.yml        # lint + test on every push / PR
 ├── requirements.txt
+├── LICENSE
 └── README.md
 ```
+
+## Tests
+
+```bash
+pip install pytest
+pytest -q
+```
+
+The smoke tests assert the data files load from `data/`, expose the columns
+`app.py` depends on, and that every state in the order data resolves against
+the choropleth geojson — so a broken path or renamed column fails fast in CI
+instead of only at runtime.
 
 ## Data
 
