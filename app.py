@@ -2,7 +2,7 @@
 India E-Commerce Analytics Dashboard
 --------------------------------------
 A story-driven Streamlit dashboard on real Indian e-commerce order data
-(FY 2018-19, 560 orders / 1,500 line items across 19 states).
+(FY 2018-19, 500 orders / 1,500 line items across 19 states).
 
 Run:
     streamlit run app.py
@@ -110,7 +110,7 @@ fdf = df.loc[mask].copy()
 st.sidebar.markdown("---")
 st.sidebar.metric("Rows in current view", f"{len(fdf):,}")
 st.sidebar.caption(
-    "Data: Indian E-Commerce Sales dataset (Kaggle) — 560 orders, "
+    "Data: Indian E-Commerce Sales dataset (Kaggle) — 500 orders, "
     "1,500 order line items, 19 states, FY Apr 2018 – Mar 2019."
 )
 
