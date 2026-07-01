@@ -11,7 +11,6 @@ Run:
 import json
 
 import pandas as pd
-import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
@@ -94,6 +93,8 @@ sel_states = st.sidebar.multiselect("State", states, default=states)
 categories = sorted(df["Category"].unique())
 sel_categories = st.sidebar.multiselect("Category", categories, default=categories)
 
+# st.date_input returns a 1-tuple mid-selection (only the start picked so far);
+# fall back to the full range until the user has chosen both ends.
 if len(date_range) == 2:
     start_date, end_date = pd.to_datetime(date_range[0]), pd.to_datetime(date_range[1])
 else:
